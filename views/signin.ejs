@@ -1,0 +1,36 @@
+<%-include("./partials/header.ejs")%>
+
+<div class="h-screen w-screen bg-gray-400">
+  <%-include("./partials/nav.ejs")%>
+  <h1 class="text-2xl font-bold text-center my-3">
+    Expense Tracker | User Login
+  </h1>
+  <div class="w-fit rounded bg-white text-center my-10 mx-auto px-10 py-10">
+    <form class="text-center" action="/user/signin" method="post">
+      <input
+        class="w-full border-2 bg-blue-50 border-gray-500 rounded-full px-5 py-2 mb-7 mt-7"
+        type="text"
+        name="username"
+        placeholder="username"
+      />
+      <input
+        class="w-full border-2 bg-blue-50 border-gray-500 rounded-full px-5 py-2 mb-3"
+        type="text"
+        name="password"
+        placeholder="password"
+      />
+      <p class="text-blue-700">
+        <a href="/user/forget-password">Forget Password ?</a>
+      </p>
+      <button class="px-7 py-2 bg-black text-white rounded-full mb-10 mt-5">
+        Sign in
+      </button>
+    </form>
+
+    <p>
+      Don't have an account ?
+      <a class="text-blue-700" href="/user/singnup">Register Now</a>
+    </p>
+  </div>
+</div>
+<%-include("./partials/footer.ejs")%>

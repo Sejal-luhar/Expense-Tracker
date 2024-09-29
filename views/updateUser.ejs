@@ -1,0 +1,78 @@
+<%-include("./partials/header.ejs")%>
+<div class="h-screen w-screen bg-gray-400">
+
+<%-include("./partials/nav.ejs")%>
+<div class="flex">
+
+    <div class="sidebar   transition-transform w-fit bg-black  px-5 py-10 pr-20 text-white ">
+        <img
+          class="h-20 w-20 ml-10"
+          src="https://cdn-icons-png.flaticon.com/256/4982/4982416.png"
+          alt=""
+        />
+        <h3 class="my-7 mb-10 ml-10">Hello ,<%=user.username%>!</h3>
+        <div class="flex items-center gap-2 my-10 mt-20">
+          <img
+            class="h-5"
+            src="https://cdn-icons-png.flaticon.com/128/6066/6066733.png"
+            alt=""
+          />
+          <a href="/user/resetpassword">Reset Password</a><br />
+        </div>
+        <div class="flex items-center gap-2 my-10">
+          <img
+            class="h-5"
+            src="https://cdn-icons-png.flaticon.com/128/11121/11121550.png"
+            alt=""
+          />
+          <a href="/user/update">Update User Details</a><br />
+        </div>
+        <div class="flex items-center gap-2 my-10">
+          <img
+            class="h-5"
+            src="https://cdn-icons-png.flaticon.com/128/14723/14723973.png"
+            alt=""
+          />
+          <a href="/user/deleteaccount">Delete account</a><br />
+        </div>
+        <div class="flex items-center gap-2 my-10 mt-20">
+          <img
+            class="h-5"
+            src="https://cdn-icons-png.flaticon.com/128/10313/10313098.png"
+            alt=""
+          />
+          <a href="/user/signout">Logout</a><br />
+        </div>
+      </div>
+
+
+<div class="text-center w-3/4 py-20">
+<img class="avatar-preview h-32 w-32 rounded-full object-cover mx-auto border-2 border-blue-600" src="<%=user.avatar.url%>" alt="">
+
+<form class="avatar-form" action="/user/avatar" method="post" enctype="multipart/form-data">
+    <input class="avatar-input hidden " type="file" name="avatar">
+</form>
+
+<form  action="/user/update" method="post" >
+    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded" type="text" name="username" placeholder="johndoe" value="<%=user.username%>"/>
+    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded" type="email" name="email" placeholder="john@doe.com" value="<%=user.email%>" />
+    <button class="px-5 py-2 rounded bg-blue-500 text-white">Update User</button>
+</form>
+</div>
+</div>
+</div>
+<script>
+    const avatarPreview=document.querySelector(".avatar-preview");
+    const avatarForm=document.querySelector(".avatar-form");
+    const avatarInput=document.querySelector(".avatar-input");
+
+    avatarPreview.addEventListener("click",()=>{
+        avatarInput.click();
+    });
+    avatarInput.addEventListener("change",()=>{
+        avatarForm.submit();
+    })
+</script>
+
+
+<%-include("./partials/footer.ejs")%>

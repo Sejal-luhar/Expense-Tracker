@@ -1,0 +1,25 @@
+
+<nav class="w-screen h-12 bg-black text-white p-1 pl-2 flex justify-between items-center border-b-2 border-gray-500">
+    <div class="flex items-center ml-10">
+    <img class="h-10 " src="https://cdn-icons-png.flaticon.com/128/17435/17435610.png" alt="">
+    <h2 class="font-bold text-blue-200">Expenses</h2>
+</div>
+<div class="flex gap-10">
+   <% if(user){ %>
+    <a class="hover:underline" href="/user/profile"> Home</a>
+    <a class="hover:underline" href="/expense/create">log expense</a>
+    <a class="hover:underline" href="/expense/show">Show expense</a>
+    
+    <% }else{ %>
+        
+        <a class="hover:underline" href="/"> Home</a>
+    <%}%>
+    <a class="hover:underline" href="/features">Features</a>
+    <a class="hover:underline" href="/about">About</a>
+</div>
+    <div class="flex gap-2">
+    <a href="/user/signin" class="bg-white px-3 py-1 rounded border-black text-black">Login</a>
+    <a href="/user/singnup" class="bg-black px-3 py-1 rounded border-white text-white ">Signup</a>
+   
+</div>
+</nav>

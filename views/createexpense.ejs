@@ -1,0 +1,72 @@
+<%-include("./partials/header.ejs")%>
+<div class="h-screen w-screen bg-gray-400">
+  <%-include("./partials/nav.ejs")%>
+  <div class="flex w-full">
+    <div class="bg-black w-fit p-5 py-10">
+      <img
+        class="h-5 my-20"
+        src="https://cdn-icons-png.flaticon.com/128/6066/6066733.png"
+        alt=""
+      />
+      <img
+        class="h-5 my-20"
+        src="https://cdn-icons-png.flaticon.com/128/11121/11121550.png"
+        alt=""
+      />
+      <img
+        class="h-5 my-20"
+        src="https://cdn-icons-png.flaticon.com/128/14723/14723973.png"
+        alt=""
+      />
+      <img
+        class="h-5 my-20 mb-28"
+        src="https://cdn-icons-png.flaticon.com/128/10313/10313098.png"
+        alt=""
+      />
+    </div>
+    <form
+      class="w-2/3 px-20 py-10 rounded shadow opacity-80 bg-white text-center"
+      action="/expense/create"
+      method="post"
+    >
+      <h1 class="text-3xl font-semibold mb-10">Manage Your Expense</h1>
+      <input
+        class="w-3/4 border-2 border-gray-600 rounded-full px-5 py-2 my-3"
+        type="text"
+        name="title"
+        placeholder="Title"
+      />
+      <input
+        class="w-3/4 border-2 border-gray-600 rounded-full px-5 py-2 my-3"
+        type="number"
+        name="amount"
+        placeholder="Amount"
+      />
+      <input
+        class="w-3/4 border-2 border-gray-600 rounded-full px-5 py-2 my-3"
+        type="text"
+        name="category"
+        placeholder="Category"
+      />
+      <input
+        class="w-3/4 border-2 border-gray-600 rounded-full px-5 py-2 my-3"
+        type="text"
+        name="remark"
+        placeholder="Remark"
+      />
+      <input
+        class="w-3/4 border-2 border-gray-600 rounded-full px-5 py-2 my-3"
+        type="text"
+        name="paymentmode"
+        placeholder="Payment Mode"
+      />
+      <button class="bg-black text-white px-20 py-3 rounded-full mt-10">
+        Log Expense
+      </button>
+    </form>
+    <div class="h-full" >
+        <img class="h-full object-cover" src="/images/sideimage4.jpg" alt="">
+    </div>
+  </div>
+</div>
+<%-include("./partials/footer.ejs")%>
