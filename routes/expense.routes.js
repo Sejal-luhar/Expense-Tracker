@@ -10,22 +10,28 @@ router.get("/create",isLoggedIn,(req,res)=>{
         user:req.user}
     )
 })
-router.post("/create",isLoggedIn,async(req,res,next)=>{
+router.post("/create", isLoggedIn, async (req, res, next) => {
     try {
-        const newexpense=new expenseSchema(req.body)
-         newexpense.user=req.user._id;
-        await newexpense.save();
-        // req.user.expenses.push(newexpense._id);
-        // await req.user.save();
+        // Create a new expense
+        const newExpense = new expenseSchema(req.body);
+        newExpense.user = req.user._id;
 
+        // Save the expense to the database
+        await newExpense.save();
+
+        // Push the new expense to the user's expenses array and save the user
         const currentUser = await UserSchema.findOne({username:req.user.username})
-        currentUser.expenses.push(newexpense._id)
+        currentUser.expenses.push(newExpense._id)
         await currentUser.save();
-        res.redirect("/expense/show")
+
+        // Redirect to the show expenses page
+        res.redirect("/expense/show");
     } catch (error) {
-       next(error.message)
+        // Pass the full error object to the error handler
+        next(error);
     }
-})
+});
+
 
 router.get("/show",isLoggedIn,async(req,res,next)=>{
     try {

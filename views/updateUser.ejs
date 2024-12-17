@@ -1,10 +1,10 @@
 <%-include("./partials/header.ejs")%>
-<div class="h-screen w-screen bg-gray-400">
+<div class=" w-screen bg-gray-200">
 
 <%-include("./partials/nav.ejs")%>
 <div class="flex">
 
-    <div class="sidebar   transition-transform w-fit bg-black  px-5 py-10 pr-20 text-white ">
+    <div class="sidebar m-4  transition-transform w-fit  bg-white rounded-2xl  px-5 py-10 pr-20  ">
         <img
           class="h-20 w-20 ml-10"
           src="https://cdn-icons-png.flaticon.com/256/4982/4982416.png"
@@ -35,7 +35,7 @@
           />
           <a href="/user/deleteaccount">Delete account</a><br />
         </div>
-        <div class="flex items-center gap-2 my-10 mt-20">
+        <div class="flex items-center gap-2 m-4 my-10 mt-20">
           <img
             class="h-5"
             src="https://cdn-icons-png.flaticon.com/128/10313/10313098.png"
@@ -46,7 +46,7 @@
       </div>
 
 
-<div class="text-center w-3/4 py-20">
+<div class="text-center bg-white rounded-2xl w-3/4 py-20">
 <img class="avatar-preview h-32 w-32 rounded-full object-cover mx-auto border-2 border-blue-600" src="<%=user.avatar.url%>" alt="">
 
 <form class="avatar-form" action="/user/avatar" method="post" enctype="multipart/form-data">
@@ -54,9 +54,9 @@
 </form>
 
 <form  action="/user/update" method="post" >
-    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded" type="text" name="username" placeholder="johndoe" value="<%=user.username%>"/>
-    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded" type="email" name="email" placeholder="john@doe.com" value="<%=user.email%>" />
-    <button class="px-5 py-2 rounded bg-blue-500 text-white">Update User</button>
+    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded-2xl" type="text" name="username" placeholder="johndoe" value="<%=user.username%>"/>
+    <input class="block w-3/4 mx-auto border-b-2 border-gray-600 px-10 py-2 my-10 rounded-2xl" type="email" name="email" placeholder="john@doe.com" value="<%=user.email%>" />
+    <button class="px-5 py-2 rounded-2xl bg-blue-500 text-white">Update User</button>
 </form>
 </div>
 </div>

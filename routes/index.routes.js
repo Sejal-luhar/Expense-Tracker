@@ -91,4 +91,7 @@ router.post("/imagekit",async(req,res,next)=>{
       next(error);
     }
   })
+  router.get('/about', (req, res) => {
+    res.render('about'); // Render the about.ejs template
+});
 module.exports=router;
